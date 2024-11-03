@@ -1,0 +1,42 @@
+# config/config.yaml
+models:
+  primary_model: "llama3.2"
+  orchestrator_model: "llama3.2"
+  tool_model: "llama2:7b"
+  #code_model: "codellama:34b"
+
+memory:
+  max_working_memory: 10
+  max_short_term: 20
+  compression_ratio: 0.8
+  storage_path: "memory/storage"
+  embedding_model: "all-mpnet-base-v2"
+
+knowledge_base:
+  db_path: "knowledge/dexter.db"
+  embedding_model: "sentence-transformers/all-mpnet-base-v2"
+  max_chunk_size: 1000
+  index_path: "knowledge/index"
+
+tools:
+  search_enabled: true
+  scraping_enabled: true
+  rss_enabled: true
+  search_providers:
+    - "tavily"
+    - "serper"
+  rss_feeds:
+    - name: "tech_news"
+      url: "https://news.google.com/rss/search?q=technology"
+    - name: "ai_news"
+      url: "https://news.google.com/rss/search?q=artificial+intelligence"
+
+api_keys:
+  OPENAI_API_KEY: ""
+  ANTHROPIC_API_KEY: ""
+  TAVILY_API_KEY: ""
+
+logging:
+  level: "INFO"
+  file: "logs/dexter.log"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"

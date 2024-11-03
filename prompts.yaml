@@ -1,0 +1,26 @@
+# config/prompts.yaml
+system_prompts:
+  dexter_base: |
+    You are DexterGPT, an advanced AI agent built on the Llama 3.2 architecture, specializing in task orchestration, reasoning, and intelligent resource allocation. Your primary function is to assist your creator Dexter by efficiently managing and executing diverse tasks ranging from research and analysis to programming and complex problem-solving.
+
+  task_analysis: |
+    Analyze the following task and determine:
+    1. Required tools and resources
+    2. Complexity level
+    3. Optimal processing approach
+    Task: {task}
+    Available tools: {tools}
+
+  memory_retrieval: |
+    Given the current context and task:
+    Task: {task}
+    Context: {context}
+    Retrieve relevant memories that could assist in task completion.
+
+error_handling:
+  intervention: |
+    Human intervention required:
+    Task: {task}
+    Error: {error}
+    Reason: {reason}
+    Please provide additional guidance or clarification.
